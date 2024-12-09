@@ -1,0 +1,123 @@
+<!-- docs/sections/modules.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pithon Programming Language Documentation - Modules</title>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Optional: Syntax Highlighting with Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Pithon Programming Language</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="documentation-overview">
+            <h2>Modules</h2>
+            <p>
+                Pithon comes with a set of built-in modules that extend its functionality, allowing developers to perform a wide range of tasks without writing extensive code. This section explores the available modules, their capabilities, and guidelines for creating custom modules.
+            </p>
+        </section>
+
+        <section class="modules-details">
+            <h3>Built-in Modules</h3>
+            <p>
+                Below are the built-in modules available in Pithon. Each module provides specific functionalities to aid in development.
+            </p>
+
+            <h4>Math Module</h4>
+            <p>
+                The Math module offers a collection of mathematical functions and constants, enabling complex calculations with ease.
+            </p>
+            <pre><code class="python">
+import math
+
+let result = math.sqrt(25)
+display(result)  # Outputs: 5.0
+            </code></pre>
+
+            <h4>Physics Module</h4>
+            <p>
+                The Physics module provides functions related to physics calculations, including force, energy, and motion.
+            </p>
+            <pre><code class="python">
+import physics
+
+let force = physics.calculate_force(mass=10, acceleration=9.8)
+display(force)  # Outputs: 98.0
+            </code></pre>
+
+            <h4>System Module</h4>
+            <p>
+                The System module allows interaction with the underlying operating system, enabling tasks such as file manipulation and environment variable access.
+            </p>
+            <pre><code class="python">
+import system
+
+let current_dir = system.get_current_directory()
+display(current_dir)
+            </code></pre>
+
+            <h3>Creating Custom Modules</h3>
+            <p>
+                Pithon allows developers to create their own custom modules to encapsulate reusable code and extend the language's capabilities.
+            </p>
+            <h4>Steps to Create a Custom Module:</h4>
+            <ol>
+                <li>Create a new `.py` file representing your module.</li>
+                <li>Define functions, classes, and variables within the module.</li>
+                <li>Import and use the module in your Pithon programs.</li>
+            </ol>
+
+            <h4>Example: Creating a Utilities Module</h4>
+            <p>
+                Here's how to create and use a simple `utilities` module.
+            </p>
+
+            <h5>Step 1: Create `utilities.py`</h5>
+            <pre><code class="python">
+# utilities.py
+
+function add(a, b):
+    return a + b
+
+function subtract(a, b):
+    return a - b
+            </code></pre>
+
+            <h5>Step 2: Import and Use the Module</h5>
+            <pre><code class="python">
+import utilities
+
+let sum = utilities.add(5, 3)
+display(sum)  # Outputs: 8
+
+let difference = utilities.subtract(5, 3)
+display(difference)  # Outputs: 2
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pithon Programming Language. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/yourusername/pithon" target="_blank">GitHub Repository</a> |
+            <a href="../index.html" target="_blank">Documentation Home</a>
+        </p>
+    </footer>
+</body>
+</html>
