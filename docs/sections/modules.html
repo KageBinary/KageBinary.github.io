@@ -27,87 +27,132 @@
 
     <main>
         <section class="documentation-overview">
-            <h2>Modules</h2>
+            <h2>Built-in Modules</h2>
             <p>
-                Pithon comes with a set of built-in modules that extend its functionality, allowing developers to perform a wide range of tasks without writing extensive code. This section explores the available modules, their capabilities, and guidelines for creating custom modules.
+                Pithon provides several built-in modules that offer essential functionalities and constants to facilitate various operations. These modules are automatically available in your Pithon environment, allowing you to leverage mathematical and physical constants seamlessly in your programs.
             </p>
         </section>
 
-        <section class="modules-details">
-            <h3>Built-in Modules</h3>
-            <p>
-                Below are the built-in modules available in Pithon. Each module provides specific functionalities to aid in development.
-            </p>
+        <section class="modules-list">
+            <h3>Available Modules</h3>
+            <ul>
+                <li><strong>Math</strong> - Provides fundamental mathematical constants.</li>
+                <li><strong>Physics</strong> - Contains key physical constants.</li>
+                <li><strong>System</strong> - Offers system-related constants.</li>
+                <!-- Add more modules as needed -->
+            </ul>
+        </section>
 
-            <h4>Math Module</h4>
+        <section class="module-details">
+            <h3>Math Module</h3>
             <p>
-                The Math module offers a collection of mathematical functions and constants, enabling complex calculations with ease.
+                The <strong>Math</strong> module includes a collection of essential mathematical constants that are frequently used in calculations and algorithms.
+            </p>
+            <h4>Available Constants</h4>
+            <ul>
+                <li><strong>pi</strong> - The mathematical constant π (~3.14159).</li>
+                <li><strong>e</strong> - Euler's number (~2.71828).</li>
+                <li><strong>tau</strong> - Tau, equal to 2π (~6.28318).</li>
+                <li><strong>phi</strong> - The golden ratio (~1.61803).</li>
+                <li><strong>gamma</strong> - Euler-Mascheroni constant (~0.57721).</li>
+                <li><strong>sqrt2</strong> - Square root of 2 (~1.41421).</li>
+                <li><strong>sqrt3</strong> - Square root of 3 (~1.73205).</li>
+                <li><strong>log10e</strong> - Logarithm base 10 of Euler's number (~0.43429).</li>
+            </ul>
+
+            <h4>Usage Example</h4>
+            <p>
+                Below is an example of how to access and use the constants from the Math module in your Pithon script:
             </p>
             <pre><code class="python">
-import math
+# Example: Using Math Module Constants in Pithon
 
-let result = math.sqrt(25)
-display(result)  # Outputs: 5.0
+# Accessing Math constants
+let pi = Math.pi;
+let e = Math.e;
+let tau = Math.tau;
+
+# Performing calculations
+let circumference = tau * radius;
+let exponential = Math.e ^ x;
+
+# Displaying results
+display("Circumference:", circumference);
+display("Exponential:", exponential);
             </code></pre>
+        </section>
 
-            <h4>Physics Module</h4>
+        <section class="module-details">
+            <h3>Physics Module</h3>
             <p>
-                The Physics module provides functions related to physics calculations, including force, energy, and motion.
+                The <strong>Physics</strong> module provides essential physical constants that are fundamental in various scientific and engineering calculations.
+            </p>
+            <h4>Available Constants</h4>
+            <ul>
+                <li><strong>c</strong> - Speed of light in vacuum (299,792,458 meters per second).</li>
+                <li><strong>G</strong> - Gravitational constant (6.67430 × 10⁻¹¹ m³⋅kg⁻¹⋅s⁻²).</li>
+                <li><strong>h</strong> - Planck constant (6.62607015 × 10⁻³⁴ Js).</li>
+                <li><strong>Na</strong> - Avogadro's number (6.02214076 × 10²³ mol⁻¹).</li>
+                <li><strong>k</strong> - Boltzmann constant (1.380649 × 10⁻²³ J⋅K⁻¹).</li>
+            </ul>
+
+            <h4>Usage Example</h4>
+            <p>
+                Here's how you can utilize the constants from the Physics module in your Pithon script:
             </p>
             <pre><code class="python">
-import physics
+# Example: Using Physics Module Constants in Pithon
 
-let force = physics.calculate_force(mass=10, acceleration=9.8)
-display(force)  # Outputs: 98.0
+# Accessing Physics constants
+let speed_of_light = Physics.c;
+let gravitational_constant = Physics.G;
+let planck_constant = Physics.h;
+
+# Performing calculations
+let energy = planck_constant * frequency;
+let force = gravitational_constant * (mass1 * mass2) / (distance ^ 2);
+
+# Displaying results
+display("Energy:", energy);
+display("Force:", force);
             </code></pre>
+        </section>
 
-            <h4>System Module</h4>
+        <section class="module-details">
+            <h3>System Module</h3>
             <p>
-                The System module allows interaction with the underlying operating system, enabling tasks such as file manipulation and environment variable access.
+                The <strong>System</strong> module provides system-related constants that are useful for handling infinite values and floating-point precision.
+            </p>
+            <h4>Available Constants</h4>
+            <ul>
+                <li><strong>inf</strong> - Represents positive infinity.</li>
+                <li><strong>-inf</strong> - Represents negative infinity.</li>
+                <li><strong>eps</strong> - Machine epsilon (the smallest representable difference).</li>
+            </ul>
+
+            <h4>Usage Example</h4>
+            <p>
+                Below is an example of how to use the constants from the System module in your Pithon script:
             </p>
             <pre><code class="python">
-import system
+# Example: Using System Module Constants in Pithon
 
-let current_dir = system.get_current_directory()
-display(current_dir)
-            </code></pre>
+# Accessing System constants
+let positive_infinity = System.inf;
+let negative_infinity = System.-inf;
+let epsilon = System.eps;
 
-            <h3>Creating Custom Modules</h3>
-            <p>
-                Pithon allows developers to create their own custom modules to encapsulate reusable code and extend the language's capabilities.
-            </p>
-            <h4>Steps to Create a Custom Module:</h4>
-            <ol>
-                <li>Create a new `.py` file representing your module.</li>
-                <li>Define functions, classes, and variables within the module.</li>
-                <li>Import and use the module in your Pithon programs.</li>
-            </ol>
+# Performing comparisons
+if (value == positive_infinity){
+    display("Value is positive infinity.");
+}
+else if (value == negative_infinity){
+    display("Value is negative infinity.");
+}
 
-            <h4>Example: Creating a Utilities Module</h4>
-            <p>
-                Here's how to create and use a simple `utilities` module.
-            </p>
-
-            <h5>Step 1: Create `utilities.py`</h5>
-            <pre><code class="python">
-# utilities.py
-
-function add(a, b):
-    return a + b
-
-function subtract(a, b):
-    return a - b
-            </code></pre>
-
-            <h5>Step 2: Import and Use the Module</h5>
-            <pre><code class="python">
-import utilities
-
-let sum = utilities.add(5, 3)
-display(sum)  # Outputs: 8
-
-let difference = utilities.subtract(5, 3)
-display(difference)  # Outputs: 2
+# Checking precision
+let is_precise = (difference < epsilon);
+display("Is the difference within machine epsilon?", is_precise);
             </code></pre>
         </section>
     </main>
@@ -115,7 +160,7 @@ display(difference)  # Outputs: 2
     <footer>
         <p>&copy; 2024 Pithon Programming Language. All rights reserved.</p>
         <p>
-            <a href="https://github.com/yourusername/pithon" target="_blank">GitHub Repository</a> |
+            <a href="https://github.com/KageBinary/KageBinary.github.io" target="_blank">GitHub Repository</a> |
             <a href="../index.html" target="_blank">Documentation Home</a>
         </p>
     </footer>
