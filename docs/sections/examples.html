@@ -1,0 +1,156 @@
+<!-- docs/examples.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pithon Programming Language Documentation - Examples</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Optional: Syntax Highlighting with Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Pithon Programming Language</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="examples-overview">
+            <h2>Examples</h2>
+            <p>
+                Below are several example scripts demonstrating the features and functionalities of the Pithon programming language. These examples cover basic operations, function definitions, set manipulations, and more.
+            </p>
+        </section>
+
+        <section class="example">
+            <h3>Basic Arithmetic Operations</h3>
+            <pre><code class="python">
+# basic_arithmetic.pi
+
+let a = 10;
+let b = 5;
+
+let sum = a + b;
+let difference = a - b;
+let product = a * b;
+let quotient = a / b;
+
+display("Sum:", sum);           # Output: Sum: 15
+display("Difference:", difference); # Output: Difference: 5
+display("Product:", product);       # Output: Product: 50
+display("Quotient:", quotient);     # Output: Quotient: 2.0
+            </code></pre>
+        </section>
+
+        <section class="example">
+            <h3>Using Built-In Math Constants</h3>
+            <pre><code class="python">
+# math_constants.pi
+
+let circumference = 2 * Math.pi * radius;
+let area = Math.pi * (radius ^ 2);
+
+display("Circumference:", circumference);
+display("Area:", area);
+            </code></pre>
+        </section>
+
+        <section class="example">
+            <h3>Defining and Using Functions</h3>
+            <pre><code class="python">
+# define_function.pi
+
+# Define a function to calculate the square of a number
+let square(x) = x ^ 2;
+
+# Use the function
+let result = square(4);
+
+display("Square of 4:", result);  # Output: Square of 4: 16
+            </code></pre>
+        </section>
+
+        <section class="example">
+            <h3>Applying a Function to a Set</h3>
+            <pre><code class="python">
+# apply_function.pi
+
+# Define a set
+let numbers = {1, 2, 3, 4, 5};
+
+# Define a function that squares its input
+let square(x) = x ^ 2;
+
+# Apply the function to each element of the set
+let squared_numbers = apply(square, numbers);
+
+display("Original Numbers:", numbers);         # Output: Original Numbers: {1, 2, 3, 4, 5}
+display("Squared Numbers:", squared_numbers);  # Output: Squared Numbers: {1, 4, 9, 16, 25}
+            </code></pre>
+        </section>
+
+        <section class="example">
+            <h3>Using Conditional Statements</h3>
+            <pre><code class="python">
+# conditional_statement.pi
+
+let number = 10;
+
+if (number > 0){
+    display(number, "is positive.");
+}
+else {
+    display(number, "is not positive.");
+}
+            </code></pre>
+        </section>
+
+        <section class="example">
+            <h3>Looping with For Loops</h3>
+            <pre><code class="python">
+# for_loop.pi
+
+# Print numbers from 1 to 5
+for i in 1 <+> 6 {
+    display("Number:", i);
+}
+            </code></pre>
+        </section>
+
+        <section class="example">
+            <h3>Creating and Displaying Graphs</h3>
+            <pre><code class="python">
+# graph_example.pi
+
+# Define a function to calculate sine
+let f(x) = sin(x);
+
+# Create a graph of the sine function from 0 to 2π
+let graph = graph(xStart=0, xEnd=6.28318, xStep=0.1, yStart=-1, yEnd=1, yStep=0.1, yFunc=f(x), style="b-");
+
+# Display the graph
+# Note: The graph will be displayed after the script runs
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pithon Programming Language. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/KageBinary/KageBinary.github.io" target="_blank">GitHub Repository</a> |
+            <a href="index.html">Documentation Home</a>
+        </p>
+    </footer>
+</body>
+</html>
