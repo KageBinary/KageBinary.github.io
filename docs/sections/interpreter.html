@@ -1,0 +1,116 @@
+<!-- docs/sections/interpreter.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pithon Programming Language Documentation - Interpreter</title>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Optional: Syntax Highlighting with Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Pithon Programming Language</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="documentation-overview">
+            <h2>Interpreter</h2>
+            <p>
+                The Pithon interpreter is a robust tool that executes Pithon scripts, allowing developers to run and test their code seamlessly. Built using Python and TextX, the interpreter offers advanced features such as type inference, comprehensive error handling, and integration with built-in modules.
+            </p>
+        </section>
+
+        <section class="interpreter-details">
+            <h3>Installation</h3>
+            <p>
+                Follow the steps below to install the Pithon interpreter on your system.
+            </p>
+            <ol>
+                <li>Ensure you have Python installed on your machine. Pithon requires Python 3.6 or higher.</li>
+                <li>Download the latest version of the Pithon interpreter from the <a href="download.html">Download</a> page.</li>
+                <li>Extract the downloaded ZIP file to your desired location.</li>
+                <li>Navigate to the extracted `interpreter/` directory.</li>
+                <li>Install the required dependencies by running:
+                    <pre><code class="python">
+pip install -r requirements.txt
+                    </code></pre>
+                </li>
+            </ol>
+
+            <h3>Configuration</h3>
+            <p>
+                The interpreter can be configured using the `config.cfg` file located in the `interpreter/` directory. Modify this file to set preferences such as default modules, logging levels, and more.
+            </p>
+            <pre><code class="python">
+# Example config.cfg
+
+[Interpreter]
+default_modules = math, physics, system
+logging_level = INFO
+            </code></pre>
+
+            <h3>Usage Tips</h3>
+            <p>
+                Here are some tips to get the most out of the Pithon interpreter:
+            </p>
+            <ul>
+                <li><strong>Interactive Mode:</strong> Launch the interpreter in interactive mode to test code snippets on the fly.
+                    <pre><code class="python">
+python main.py
+                    </code></pre>
+                </li>
+                <li><strong>Running Scripts:</strong> Execute Pithon scripts by passing the script file as an argument.
+                    <pre><code class="python">
+python main.py path/to/script.pithon
+                    </code></pre>
+                </li>
+                <li><strong>Debugging:</strong> Utilize the built-in debugging tools to identify and fix issues in your code.</li>
+                <li><strong>Extending Functionality:</strong> Create custom modules to extend the interpreter's capabilities.</li>
+            </ul>
+
+            <h3>Troubleshooting</h3>
+            <p>
+                If you encounter issues while using the interpreter, consider the following steps:
+            </p>
+            <ol>
+                <li>Check the installation steps to ensure all dependencies are installed correctly.</li>
+                <li>Review the `config.cfg` file for any misconfigurations.</li>
+                <li>Refer to the <a href="error-handling.html">Error Handling</a> section for common errors and their solutions.</li>
+                <li>Seek assistance from the Pithon community via the <a href="contact.html">Contact</a> page.</li>
+            </ol>
+
+            <h3>Advanced Features</h3>
+            <p>
+                The Pithon interpreter includes several advanced features to enhance development productivity:
+            </p>
+            <ul>
+                <li><strong>Type Inference:</strong> Automatically deduces variable types, reducing the need for explicit declarations.</li>
+                <li><strong>Comprehensive Error Handling:</strong> Provides detailed error messages and debugging information.</li>
+                <li><strong>Module Integration:</strong> Seamlessly integrates with built-in and custom modules for extended functionality.</li>
+                <li><strong>Performance Optimization:</strong> Efficient execution engine ensures fast runtime performance.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pithon Programming Language. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/yourusername/pithon" target="_blank">GitHub Repository</a> |
+            <a href="../index.html" target="_blank">Documentation Home</a>
+        </p>
+    </footer>
+</body>
+</html>
