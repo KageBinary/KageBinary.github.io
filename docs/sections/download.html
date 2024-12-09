@@ -38,11 +38,15 @@
             <ul>
                 <li>
                     <strong>Pithon Interpreter (`pithon_interpreter.py`):</strong>
-                    <a href="https://github.com/KageBinary/KageBinary.github.io/raw/main/interpreter/pithon_interpreter.py" download>Download Interpreter</a>
+                    <a href="https://KageBinary.github.io/main/interpreters/pithon_interpreter.py" download class="download-button">
+                        <img src="../assets/images/download_icon.png" alt="Download Icon" style="width:20px; height:20px; vertical-align: middle;"> Download Interpreter
+                    </a>
                 </li>
                 <li>
                     <strong>Pithon Grammar File (`pithon.tx`):</strong>
-                    <a href="https://github.com/KageBinary/KageBinary.github.io/raw/main/interpreter/pithon.tx" download>Download Grammar File</a>
+                    <a href="https://KageBinary.github.io/main/interpreters/pithon.tx" download class="download-button">
+                        <img src="../assets/images/download_icon.png" alt="Download Icon" style="width:20px; height:20px; vertical-align: middle;"> Download Grammar File
+                    </a>
                 </li>
             </ul>
         </section>
@@ -52,28 +56,31 @@
             <ol>
                 <li><strong>Prerequisites:</strong>
                     <ul>
-                        <li>Ensure you have Python installed on your system (version 3.6 or higher).</li>
-                        <li>Install the required dependencies by running:
+                        <li>Ensure you have <a href="https://www.python.org/downloads/" target="_blank">Python 3.6 or higher</a> installed on your system.</li>
+                        <li>Install the required dependencies by running the following command in your terminal or command prompt:
                             <pre><code class="python">
-pip install textx
+pip install matplotlib textx
                             </code></pre>
                         </li>
                     </ul>
                 </li>
-                <li><strong>Download the Interpreter:</strong>  
-                    Click on the download links above to obtain the `pithon_interpreter.py` and `pithon.tx` files.
+                <li><strong>Download the Interpreter and Grammar File:</strong>
+                    <ul>
+                        <li>Click on the download buttons above to obtain the `pithon_interpreter.py` and `pithon.tx` files.</li>
+                    </ul>
                 </li>
                 <li><strong>Set Up the Interpreter:</strong>
                     <ul>
-                        <li>Place both `pithon_interpreter.py` and `pithon.tx` in the same directory.</li>
-                        <li>Open your terminal or command prompt and navigate to the directory containing the files.</li>
+                        <li>Create a new directory where you want to run your Pithon scripts.</li>
+                        <li>Place both `pithon_interpreter.py` and `pithon.tx` in this directory.</li>
+                        <li>Create your Pithon script file (e.g., `program.pi`) in the same directory.</li>
                     </ul>
                 </li>
                 <li><strong>Run the Interpreter:</strong>
                     <pre><code class="python">
-python pithon_interpreter.py
+python pithon_interpreter.py program.pi
                     </code></pre>
-                    This command launches the Pithon interpreter, ready to execute your Pithon scripts.
+                    This command executes your Pithon script using the interpreter.
                 </li>
             </ol>
         </section>
@@ -81,25 +88,25 @@ python pithon_interpreter.py
         <section class="usage-tips">
             <h3>Usage Tips</h3>
             <ul>
-                <li><strong>Interactive Mode:</strong>  
+                <li><strong>Interactive Mode:</strong>
                     Launch the interpreter without specifying a script to enter interactive mode.
                     <pre><code class="python">
 python pithon_interpreter.py
                     </code></pre>
                 </li>
-                <li><strong>Executing Scripts:</strong>  
+                <li><strong>Executing Scripts:</strong>
                     Run a specific Pithon script by passing the script file as an argument.
                     <pre><code class="python">
-python pithon_interpreter.py path/to/your_script.pithon
+python pithon_interpreter.py path/to/your_script.pi
                     </code></pre>
                 </li>
-                <li><strong>Help Command:</strong>  
+                <li><strong>Help Command:</strong>
                     Use the help command within the interpreter to get assistance.
                     <pre><code class="python">
 help
                     </code></pre>
                 </li>
-                <li><strong>Exiting the Interpreter:</strong>  
+                <li><strong>Exiting the Interpreter:</strong>
                     Type `exit` or press `Ctrl + D` to exit interactive mode.
                 </li>
             </ul>
@@ -109,23 +116,25 @@ help
             <h3>Troubleshooting</h3>
             <p>If you encounter issues while installing or running the Pithon interpreter, consider the following solutions:</p>
             <ul>
-                <li><strong>Missing Dependencies:</strong>  
+                <li><strong>Missing Dependencies:</strong>
                     Ensure all required packages are installed by running:
                     <pre><code class="python">
-pip install textx
+pip install matplotlib textx
                     </code></pre>
                 </li>
-                <li><strong>Python Version:</strong>  
+                <li><strong>Python Version:</strong>
                     Verify that you are using Python 3.6 or higher by running:
                     <pre><code class="python">
 python --version
                     </code></pre>
                 </li>
-                <li><strong>File Permissions:</strong>  
+                <li><strong>File Permissions:</strong>
                     Ensure that the interpreter files have the necessary permissions to execute.</li>
-                <li><strong>Consult Documentation:</strong>  
+                <li><strong>Grammar File Placement:</strong>
+                    Make sure that the `pithon.tx` file is in the same directory as `pithon_interpreter.py`.</li>
+                <li><strong>Consult Documentation:</strong>
                     Refer to the <a href="documentation.html">Documentation</a> for detailed guides and references.</li>
-                <li><strong>Community Support:</strong>  
+                <li><strong>Community Support:</strong>
                     Reach out via the <a href="contact.html">Contact</a> page for further assistance.</li>
             </ul>
         </section>
@@ -134,7 +143,7 @@ python --version
     <footer>
         <p>&copy; 2024 Pithon Programming Language. All rights reserved.</p>
         <p>
-            <a href="https://github.com/yourusername/pithon" target="_blank">GitHub Repository</a> |
+            <a href="https://github.com/KageBinary/pithon" target="_blank">GitHub Repository</a> |
             <a href="../index.html" target="_blank">Documentation Home</a>
         </p>
     </footer>
