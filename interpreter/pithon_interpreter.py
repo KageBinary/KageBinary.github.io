@@ -204,6 +204,49 @@ class Interpreter:
             raise ValueError(f"Unhandled statement type: {class_name}")
 
 
+    def apply_function(self, func_name, input_set):
+        """
+        Applies a user-defined function to each element of a set and returns a new set with the results.
+
+        Parameters:
+            func_name (str): The name of the function to apply.
+            input_set (set): The set of elements to transform.
+
+        Returns:
+            set: A new set containing the transformed elements.
+        """
+        if not isinstance(input_set, set):
+            raise TypeError("The second argument to apply must be a set.")
+        if not isinstance(func_name, str) or func_name not in self.functionMap:
+            raise TypeError("The first argument to apply must be a valid function name.")
+
+        params, body = self.functionMap[func_name]
+        if len(params) != 1:
+            raise ValueError("Function passed to apply must take exactly one argument.")
+
+        param_name = params[0]
+        result_set = set()
+
+        for el in input_set:
+            # Backup the current variable map
+            previous_var_map = self.varMap.copy()
+
+            # Set the function parameter to the current element
+            self.varMap[param_name] = {'type': self.infer_type(el), 'value': el}
+
+            try:
+                # Evaluate the function body
+                result = self.evaluate_operation(body)
+                result_set.add(result)
+            except Exception as e:
+                raise ValueError(f"Error applying function '{func_name}' to element '{el}': {e}")
+            finally:
+                # Restore the previous variable map
+                self.varMap = previous_var_map
+
+        return result_set
+    
+
     def process_while_loop(self, loop):
         # Evaluate the condition first
         condition_val = self.evaluate_operation(loop.condition)
@@ -423,6 +466,7 @@ class Interpreter:
         finally:
             self.varMap = previous_var_map
 
+
     def evaluate_operation(self, expr):
         if expr is None:
             return None
@@ -492,6 +536,10 @@ class Interpreter:
                     result = result - right_val
             return result
 
+        elif class_name == "ApplyFunction":
+            func = expr.func
+            input_set = self.evaluate_operation(expr.inputSet)
+            return self.apply_function(func, input_set)
         elif class_name == "Multiplication":
             result = self.evaluate_operation(expr.left)
             for op, right in zip(expr.ops, expr.rights):
