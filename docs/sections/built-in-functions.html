@@ -1,0 +1,141 @@
+<!-- docs/sections/built-in-functions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pithon Programming Language Documentation - Built-in Functions</title>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Optional: Syntax Highlighting with Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Pithon Programming Language</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="documentation-overview">
+            <h2>Built-in Functions</h2>
+            <p>
+                Pithon provides a rich set of built-in functions that facilitate various operations, from basic input/output to complex mathematical computations. This section lists all the built-in functions available in Pithon, along with their descriptions and usage examples.
+            </p>
+        </section>
+
+        <section class="built-in-functions-list">
+            <h3>List of Built-in Functions</h3>
+            <ul>
+                <li><strong>display()</strong> - Outputs text or variables to the console.</li>
+                <li><strong>input()</strong> - Takes user input from the console.</li>
+                <li><strong>len()</strong> - Returns the length of a string or list.</li>
+                <li><strong>range()</strong> - Generates a sequence of numbers.</li>
+                <li><strong>math.sqrt()</strong> - Calculates the square root of a number.</li>
+                <li><strong>physics.calculate_force()</strong> - Computes force based on mass and acceleration.</li>
+                <li><strong>system.get_current_directory()</strong> - Retrieves the current working directory.</li>
+                <!-- Add more built-in functions as needed -->
+            </ul>
+        </section>
+
+        <section class="function-examples">
+            <h3>Function Usage Examples</h3>
+
+            <h4>display()</h4>
+            <p>
+                Outputs text or variables to the console.
+            </p>
+            <pre><code class="python">
+# Example of display function
+let message = "Hello, Pithon!"
+display(message)  # Outputs: Hello, Pithon!
+            </code></pre>
+
+            <h4>input()</h4>
+            <p>
+                Takes user input from the console.
+            </p>
+            <pre><code class="python">
+# Example of input function
+let name = input("Enter your name: ")
+display("Hello, " + name + "!")
+            </code></pre>
+
+            <h4>len()</h4>
+            <p>
+                Returns the length of a string or list.
+            </p>
+            <pre><code class="python">
+# Example of len function
+let text = "Pithon"
+let text_length = len(text)
+display("Length of text:", text_length)  # Outputs: Length of text: 6
+            </code></pre>
+
+            <h4>range()</h4>
+            <p>
+                Generates a sequence of numbers.
+            </p>
+            <pre><code class="python">
+# Example of range function
+for i in range(1, 5):
+    display("Number:", i)
+    # Outputs: Number: 1
+    #          Number: 2
+    #          Number: 3
+    #          Number: 4
+            </code></pre>
+
+            <h4>math.sqrt()</h4>
+            <p>
+                Calculates the square root of a number.
+            </p>
+            <pre><code class="python">
+# Example of math.sqrt function
+let number = 16
+let square_root = math.sqrt(number)
+display("Square root of", number, "is", square_root)  # Outputs: Square root of 16 is 4.0
+            </code></pre>
+
+            <h4>physics.calculate_force()</h4>
+            <p>
+                Computes force based on mass and acceleration.
+            </p>
+            <pre><code class="python">
+# Example of physics.calculate_force function
+let mass = 10  # in kilograms
+let acceleration = 9.8  # in meters per second squared
+let force = physics.calculate_force(mass, acceleration)
+display("Force:", force)  # Outputs: Force: 98.0
+            </code></pre>
+
+            <h4>system.get_current_directory()</h4>
+            <p>
+                Retrieves the current working directory.
+            </p>
+            <pre><code class="python">
+# Example of system.get_current_directory function
+let current_dir = system.get_current_directory()
+display("Current Directory:", current_dir)
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pithon Programming Language. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/yourusername/pithon" target="_blank">GitHub Repository</a> |
+            <a href="../index.html" target="_blank">Documentation Home</a>
+        </p>
+    </footer>
+</body>
+</html>
