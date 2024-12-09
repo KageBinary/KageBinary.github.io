@@ -40,52 +40,34 @@
             </p>
             <ol>
                 <li>
-                    <strong>Prerequisites:</strong> Ensure you have Python 3.6 or higher installed. You can download it from the <a href="https://www.python.org/downloads/">official Python website</a>.
+                    <strong>Prerequisites:</strong> Ensure you have Python 3.6 or higher installed. You can download it from the <a href="https://www.python.org/downloads/" target="_blank">official Python website</a>.
                 </li>
                 <li>
-                    <strong>Clone the Repository:</strong> Download the Pithon interpreter by cloning the GitHub repository.
-                    <pre><code class="bash">
-    git clone https://github.com/yourusername/pithon.git
-                    </code></pre>
+                    <strong>Download Interpreter Files:</strong> Visit the <a href="download.html">Download</a> page and download the latest Pithon interpreter package (e.g., ZIP file).
                 </li>
                 <li>
-                    <strong>Navigate to the Interpreter Directory:</strong>
-                    <pre><code class="bash">
-    cd pithon/interpreter
-                    </code></pre>
+                    <strong>Extract Files:</strong> Extract the downloaded ZIP file to a directory of your choice.
                 </li>
                 <li>
-                    <strong>Install Dependencies:</strong> Install the required Python libraries using pip.
+                    <strong>Install Required Libraries:</strong> Open your terminal or command prompt, navigate to the extracted interpreter directory, and install the necessary Python libraries by running:
                     <pre><code class="bash">
-    pip install textx matplotlib numpy
+pip install textx matplotlib numpy
                     </code></pre>
                 </li>
             </ol>
 
             <h3>Running the Interpreter</h3>
             <p>
-                Execute Pithon scripts using the following command:
+                To execute a Pithon script, use the following command:
             </p>
             <pre><code class="bash">
-    python main.py path/to/script.pithon
+python pithon_interpreter.py path/to/your_program.pithon
             </code></pre>
             <p>
-                **Example:**
+                <strong>Example:</strong>
             </p>
             <pre><code class="bash">
-    python main.py examples/concat_example.pithon
-            </code></pre>
-
-            <h3>Configuration</h3>
-            <p>
-                The interpreter can be configured using the `config.cfg` file located in the `interpreter/` directory. Adjust settings such as default modules and logging levels as needed.
-            </p>
-            <pre><code class="python">
-# Example config.cfg
-
-[Interpreter]
-default_modules = Math, Physics, System
-logging_level = INFO
+python pithon_interpreter.py examples/concat_example.pithon
             </code></pre>
         </section>
 
@@ -107,8 +89,7 @@ logging_level = INFO
             </p>
             <ol>
                 <li>Ensure all dependencies are installed correctly by verifying with <code>pip list</code>.</li>
-                <li>Check the <code>config.cfg</code> file for any misconfigurations.</li>
-                <li>Review your Pithon script for syntax errors or unsupported operations.</li>
+                <li>Check your Pithon script for syntax errors or unsupported operations.</li>
                 <li>Refer to the <a href="contact.html">Contact</a> page for further assistance.</li>
             </ol>
         </section>
