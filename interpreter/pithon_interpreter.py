@@ -527,14 +527,22 @@ class Interpreter:
                 return left_val
 
         elif class_name == "Addition":
-            result = self.evaluate_operation(expr.left)
+            left_val = self.evaluate_operation(expr.left)
             for op, right in zip(expr.ops, expr.rights):
                 right_val = self.evaluate_operation(right)
                 if op == '+':
-                    result = result + right_val
-                else:
-                    result = result - right_val
-            return result
+                    if isinstance(left_val, str) or isinstance(right_val, str):
+                        left_val = str(left_val) + str(right_val)
+                    else:
+                        left_val = left_val + right_val
+                elif op == '-':
+                    if isinstance(left_val, (int, float)) and isinstance(right_val, (int, float)):
+                        left_val = left_val - right_val
+                    else:
+                        raise ValueError(
+                            f"Subtraction operator '-' not supported for types {type(left_val).__name__} and {type(right_val).__name__}."
+                        )
+            return left_val
 
         elif class_name == "ApplyFunction":
             func = expr.func
