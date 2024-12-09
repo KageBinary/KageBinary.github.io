@@ -1,0 +1,160 @@
+<!-- docs/sections/error-handling.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pithon Programming Language Documentation - Error Handling</title>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Optional: Syntax Highlighting with Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <header>
+        <h1>Pithon Programming Language</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="documentation-overview">
+            <h2>Error Handling</h2>
+            <p>
+                Effective error handling is essential for building robust and reliable Pithon programs. This section covers the various error types in Pithon, strategies for managing exceptions, and best practices for debugging.
+            </p>
+        </section>
+
+        <section class="error-handling-details">
+            <h3>Types of Errors</h3>
+            <p>
+                Pithon categorizes errors into several types, each indicating a different kind of problem in your code.
+            </p>
+            <ul>
+                <li><strong>Syntax Errors:</strong> Occur when the code violates Pithon's grammar rules.</li>
+                <li><strong>Runtime Errors:</strong> Happen during program execution, often due to invalid operations.</li>
+                <li><strong>Logical Errors:</strong> Result from incorrect logic, causing the program to behave unexpectedly.</li>
+                <li><strong>Type Errors:</strong> Arise when an operation is applied to an object of inappropriate type.</li>
+            </ul>
+
+            <h3>Managing Exceptions</h3>
+            <p>
+                Pithon provides structured ways to handle exceptions, allowing your programs to recover gracefully from unexpected issues.
+            </p>
+
+            <h4>Try-Except Blocks</h4>
+            <p>
+                Use try-except blocks to catch and handle exceptions, preventing the program from crashing.
+            </p>
+            <pre><code class="python">
+# Example of try-except block in Pithon
+function divide(a, b):
+    try:
+        let result = a / b
+        display("Result:", result)
+    except ZeroDivisionError:
+        display("Error: Cannot divide by zero.")
+    except Exception as e:
+        display("An unexpected error occurred:", e)
+
+divide(10, 2)  # Outputs: Result: 5.0
+divide(10, 0)  # Outputs: Error: Cannot divide by zero.
+    </code></pre>
+
+            <h4>Finally Blocks</h4>
+            <p>
+                Use finally blocks to execute code regardless of whether an exception was raised, such as closing files or releasing resources.
+            </p>
+            <pre><code class="python">
+# Example of try-except-finally block in Pithon
+function read_file(file_path):
+    try:
+        let file = open(file_path, "r")
+        let content = file.read()
+        display(content)
+    except FileNotFoundError:
+        display("Error: File not found.")
+    finally:
+        if file:
+            file.close()
+            display("File closed.")
+
+read_file("example.pithon")
+    </code></pre>
+
+            <h3>Best Practices for Error Handling</h3>
+            <ul>
+                <li><strong>Be Specific:</strong> Catch specific exceptions to handle known error conditions.</li>
+                <li><strong>Avoid Bare Excepts:</strong> Do not use bare except clauses as they can catch unexpected exceptions.</li>
+                <li><strong>Use Finally for Cleanup:</strong> Ensure that resources are released properly using finally blocks.</li>
+                <li><strong>Log Errors:</strong> Implement logging to keep track of errors and aid in debugging.</li>
+                <li><strong>Provide Meaningful Messages:</strong> Offer clear and informative error messages to users.</li>
+            </ul>
+
+            <h3>Debugging Techniques</h3>
+            <p>
+                Debugging is a critical skill for identifying and resolving issues in your Pithon programs. Below are some effective techniques:
+            </p>
+            <ul>
+                <li><strong>Print Statements:</strong> Use `display()` to output variable values and program flow checkpoints.</li>
+                <li><strong>Error Logs:</strong> Review error messages and logs to pinpoint the source of issues.</li>
+                <li><strong>Step-by-Step Execution:</strong> Manually trace the execution of your code to understand its behavior.</li>
+                <li><strong>Integrated Development Environment (IDE) Tools:</strong> Utilize debugging tools available in your IDE, such as breakpoints and watch variables.</li>
+            </ul>
+
+            <h4>Example: Debugging a Function</h4>
+            <p>
+                Suppose you have a function that isn't producing the expected results. Here's how you might debug it.
+            </p>
+            <pre><code class="python">
+# Function with a logical error
+function calculate_area(length, width):
+    let area = length + width  # Logical error: should be length * width
+    display("Area:", area)
+    return area
+
+# Debugging the function
+function calculate_area(length, width):
+    try:
+        let area = length * width
+        display("Calculating area with length:", length, "and width:", width)
+        display("Area:", area)
+        return area
+    except Exception as e:
+        display("An error occurred:", e)
+    finally:
+        display("Function calculate_area execution completed.")
+
+calculate_area(5, 10)
+    </code></pre>
+            <p>
+                **Output:**
+            </p>
+            <pre>
+Calculating area with length: 5 and width: 10
+Area: 50
+Function calculate_area execution completed.
+            </pre>
+            <p>
+                By adding print statements, you can verify that the correct values are being used in calculations, helping you identify and fix logical errors.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pithon Programming Language. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/yourusername/pithon" target="_blank">GitHub Repository</a> |
+            <a href="../index.html" target="_blank">Documentation Home</a>
+        </p>
+    </footer>
+</body>
+</html>
