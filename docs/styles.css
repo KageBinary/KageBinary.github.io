@@ -82,7 +82,7 @@ section {
 }
 
 section h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #35424a;
     border-bottom: 2px solid #e8491d;
     padding-bottom: 5px;
@@ -149,7 +149,37 @@ a:focus {
 }
 
 /* ===========================
-   5. Code Styling
+   5. Features Section
+   =========================== */
+
+.features .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.features .feature-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.features .feature-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.features .feature-item h3 {
+    margin-bottom: 10px;
+}
+
+.features .feature-item p {
+    color: #555555;
+}
+
+/* ===========================
+   6. Code Styling
    =========================== */
 
 /* Code Blocks */
@@ -191,7 +221,7 @@ code.python {
 }
 
 /* ===========================
-   6. Footer Styling
+   7. Footer Styling
    =========================== */
 
 footer {
@@ -217,7 +247,7 @@ footer a:focus {
 }
 
 /* ===========================
-   7. Responsive Design
+   8. Responsive Design
    =========================== */
 
 /* Adjust navigation for smaller screens */
@@ -249,7 +279,7 @@ footer a:focus {
 }
 
 /* ===========================
-   8. Accessibility Enhancements
+   9. Accessibility Enhancements
    =========================== */
 
 /* Focus Styles for Keyboard Navigation */
@@ -297,4 +327,83 @@ button:focus,
     .download-button:focus {
         background-color: #cf3c12;
     }
+}
+
+/* ===========================
+   10. Additional Styles
+   =========================== */
+
+/* Hero Section Styling */
+.hero {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    color: #e8491d;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Resources Section Styling */
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources ul li {
+    margin-bottom: 10px;
+}
+
+.resources ul li a {
+    background-color: #e8491d;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.resources ul li a:hover,
+.resources ul li a:focus {
+    background-color: #cf3c12;
+}
+
+/* ===========================
+   11. Feature Grid Enhancements
+   =========================== */
+
+/* Ensures the feature grid items are evenly spaced and responsive */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: #555555;
 }
