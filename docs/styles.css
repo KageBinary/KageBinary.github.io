@@ -1,0 +1,300 @@
+/* styles.css */
+
+/* ===========================
+   1. Reset and Base Styles
+   =========================== */
+
+/* Reset some default browser styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base font and background color */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===========================
+   2. Header and Navigation
+   =========================== */
+
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav ul li {
+    /* No additional styles needed */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #e8491d;
+    color: #ffffff;
+}
+
+/* ===========================
+   3. Main Content Area
+   =========================== */
+
+main {
+    flex: 1;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    margin-bottom: 10px;
+    color: #35424a;
+    border-bottom: 2px solid #e8491d;
+    padding-bottom: 5px;
+}
+
+section h3 {
+    margin-top: 20px;
+    color: #e8491d;
+}
+
+section h4 {
+    margin-top: 15px;
+    color: #555555;
+}
+
+section p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+section ul li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #e8491d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: #cf3c12;
+    text-decoration: underline;
+}
+
+/* ===========================
+   4. Buttons and Links
+   =========================== */
+
+/* Download Button Styling */
+.download-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e8491d;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.download-button:hover,
+.download-button:focus {
+    background-color: #cf3c12;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   5. Code Styling
+   =========================== */
+
+/* Code Blocks */
+pre {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #f8f8f2;
+    background-color: #2d2d2d;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Inline Code */
+section p code {
+    background-color: #2d2d2d;
+    color: #f8f8f2;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Highlight.js Specific Styling (if using classes like .python) */
+code.python {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    background: #2d2d2d;
+    color: #f8f8f2;
+    border-radius: 5px;
+}
+
+/* ===========================
+   6. Footer Styling
+   =========================== */
+
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #e8491d;
+}
+
+/* ===========================
+   7. Responsive Design
+   =========================== */
+
+/* Adjust navigation for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .download-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Ensure main content doesn't overlap footer on very small screens */
+@media (max-height: 600px) {
+    body {
+        min-height: 100vh;
+    }
+}
+
+/* ===========================
+   8. Accessibility Enhancements
+   =========================== */
+
+/* Focus Styles for Keyboard Navigation */
+a:focus,
+button:focus,
+.download-button:focus {
+    outline: 3px solid #e8491d;
+    outline-offset: 2px;
+}
+
+/* High Contrast for Better Visibility */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    header, footer {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    nav ul li a {
+        color: #ffffff;
+        background-color: #000000;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background-color: #e8491d;
+        color: #ffffff;
+    }
+
+    pre, code {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    .download-button {
+        background-color: #e8491d;
+        color: #ffffff;
+    }
+
+    .download-button:hover,
+    .download-button:focus {
+        background-color: #cf3c12;
+    }
+}
