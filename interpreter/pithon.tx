@@ -5,6 +5,7 @@ Model:
 Statement:
     ForLoop
   | WhileLoop
+  | ApplyFunction
   | IfStatement
   | DisplayStatement
   | MethodCall
@@ -16,8 +17,12 @@ Statement:
   | FunctionCall
   | GraphDeclaration
   | SetOperation
+  
 ;
 
+ApplyFunction:
+    'apply' '(' func=MethodId ',' inputSet=Expression ')'
+;
 
 SetLiteral:
     '{' (elements+=Expression[','])? '}'
@@ -144,6 +149,7 @@ Exponentiation:
 Primary:
     (op='!')? prim=BooleanLiteral
   | (op='-')? prim=Summation
+  | prim=ApplyFunction
   | (op='-')? prim=Factorial
   | (op='-')? prim=FunctionCall    // Move this before MethodInvocation
   | (op='-')? prim=MethodInvocation
@@ -211,5 +217,5 @@ SET_OPERATOR:
 Keyword:
     'for' | 'import' | 'let' | 'display' | 'Reals' | 'Strings' |
     'Integers' | 'Booleans' | 'Lists' | 'Sets' | 'graph' | 'range' |
-    'with' | 'style' | 'endMethod'
+    'with' | 'style' | 'endMethod' | 'if' | 'else' | 'while' | 'factorial' | 'summation' | 'apply'
 ;
