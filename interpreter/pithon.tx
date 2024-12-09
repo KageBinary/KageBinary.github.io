@@ -1,0 +1,215 @@
+Model:
+    statements*=Statement
+;
+
+Statement:
+    ForLoop
+  | WhileLoop
+  | IfStatement
+  | DisplayStatement
+  | MethodCall
+  | ImportStatement
+  | VariableDeclaration
+  | AssignmentStatement
+  | MethodDeclaration
+  | FunctionDeclaration
+  | FunctionCall
+  | GraphDeclaration
+  | SetOperation
+;
+
+
+SetLiteral:
+    '{' (elements+=Expression[','])? '}'
+;
+
+IfStatement:
+    'if' '(' condition=Expression ')' '{' ifBody*=Statement '}' ( 'else' '{' elseBody*=Statement '}' )?
+;
+
+DisplayStatement:
+    'display' '(' (displayValue=Expression)? ')' ';'
+    | 'display' '(' (displayValue=SetOperation)? ')' ';'
+;
+
+ImportStatement:
+    'import' modules+=ID (',' modules+=ID)* ';'
+;
+
+VariableDeclaration:
+    'let' newVar=ID ('be' 'in' varType=Type | '=' varValue=Expression) ';'
+;
+
+AssignmentStatement:
+    varName=ID '=' varValue=Expression ';'
+;
+
+FunctionDeclaration:
+    'let' funcName=MethodId '(' params+=ID (',' params+=ID)* ')' '=' funcExpr=Expression ';'
+;
+
+MethodDeclaration:
+    returnType=Type methodName=MethodId '(' params+=MethodParameter[','] ')' '{' body+=Statement* '}'
+;
+
+MethodCall:
+    MethodInvocation ';'
+;
+
+MethodInvocation:
+    object=Variable '.' methodName=MethodId '(' (args+=Expression[','])? ')'
+;
+
+WhileLoop:
+    'while' '(' condition=Expression ')' '{' body*=Statement '}'
+;
+
+
+FunctionCall:
+    funcName=MethodId '(' (args+=Expression[','])? ')'
+;
+
+ForLoop:
+    'for' loopVar=ID 'in' 'range' '(' start=Expression ',' end=Expression (',' step=Expression)? ')' 
+    '{' body*=Statement '}'
+;
+
+GraphDeclaration:
+    'graph' name=FunctionCall ':'
+    'x' 'from' xStart=Expression 'to' xEnd=Expression 'with' 'step' xStep=Expression ','
+    'y' '=' yFunc=FunctionCall 'from' yStart=Expression 'to' yEnd=Expression 'with' 'step' yStep=Expression ','
+    'style' ':' style=STRING ';'
+;
+
+SetOperation:
+    left=SetExpression (ops=SET_OPERATOR rights=SetExpression)*
+;
+
+SetExpression:
+    Variable | SetLiteral
+;
+
+Summation:
+    'summation' '(' varName=ID '=' start=Expression 'to' end=Expression ')' '(' expr=Expression ')'
+;
+
+Factorial:
+    'factorial' '(' expr=Expression ')'
+;
+
+Type:
+    'Reals' | 'Strings' | 'Integers' | 'Booleans' | 'Lists' | 'Sets'
+;
+
+Literal:
+    Number | StringLiteral | Variable | ListExpression | SetLiteral
+;
+
+ListExpression:
+    '[' (elements+=Expression[','])? ']'
+;
+
+Expression:
+    left=OrExpr
+;
+
+OrExpr:
+    left=AndExpr (('||') rights=AndExpr)*
+;
+
+AndExpr:
+    left=EqExpr (('&&') rights=EqExpr)*
+;
+
+EqExpr:
+    left=Comparison ((op='==' | op='!=') right=Comparison)?
+;
+
+Comparison:
+    left=Addition ((comp='<' | '<=' | '>' | '>=') right=Addition)?
+;
+
+Addition:
+    left=Multiplication ((ops='+' | ops='-') rights=Multiplication)*
+;
+
+Multiplication:
+    left=Exponentiation ((ops='*' | ops='/') rights=Exponentiation)*
+;
+
+Exponentiation:
+    left=Primary ((ops='^') rights=Primary)*
+;
+
+Primary:
+    (op='!')? prim=BooleanLiteral
+  | (op='-')? prim=Summation
+  | (op='-')? prim=Factorial
+  | (op='-')? prim=FunctionCall    // Move this before MethodInvocation
+  | (op='-')? prim=MethodInvocation
+  | (op='-')? '(' prim=Expression ')' 
+  | (op='-')? prim=Variable
+  | (op='-')? prim=Number
+  | (op='-')? prim=SetOperation
+  | (op='-')? prim=SetLiteral
+  | (op='-')? prim=StringLiteral
+;
+
+
+BooleanLiteral:
+    value='true' | value='false'
+;
+
+MethodParameter:
+    paramType=Type paramName=ID
+;
+
+MethodId:
+    !Keyword ID
+;
+
+Number:
+    value=FLOAT | value=INT
+;
+
+StringLiteral:
+    string=STRING
+;
+
+Variable:
+    var=/[a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)*/
+;
+
+ID:
+    /[a-zA-Z_][a-zA-Z0-9_]*/
+;
+
+STRING:
+    /"([^"\\]*(\\.[^"\\]*)*)"/
+;
+
+INT:
+    /[0-9]+/
+;
+
+FLOAT:
+    /[0-9]*\.[0-9]+/
+;
+
+NEWLINE:
+    /\n+/
+;
+
+COMPARATOR:
+    '<' | '<=' | '>' | '>=' | '==' | '!='
+;
+
+SET_OPERATOR:
+    '<+>' | '<->' | '<*>' | '</>'
+;
+
+Keyword:
+    'for' | 'import' | 'let' | 'display' | 'Reals' | 'Strings' |
+    'Integers' | 'Booleans' | 'Lists' | 'Sets' | 'graph' | 'range' |
+    'with' | 'style' | 'endMethod'
+;
