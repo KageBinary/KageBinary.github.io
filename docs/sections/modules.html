@@ -38,7 +38,7 @@
             <ul>
                 <li><strong>Math</strong> - Provides fundamental mathematical constants.</li>
                 <li><strong>Physics</strong> - Contains key physical constants.</li>
-                <li><strong>System</strong> - Offers system-related constants.</li>
+                <li><strong>System</strong> - Offers system-related constants and built-in functions.</li>
                 <!-- Add more modules as needed -->
             </ul>
         </section>
@@ -121,7 +121,7 @@ display("Force:", force);
         <section class="module-details">
             <h3>System Module</h3>
             <p>
-                The <strong>System</strong> module provides system-related constants that are useful for handling infinite values and floating-point precision.
+                The <strong>System</strong> module provides system-related constants and built-in functions that are useful for handling infinite values, floating-point precision, and functional programming utilities.
             </p>
             <h4>Available Constants</h4>
             <ul>
@@ -130,30 +130,72 @@ display("Force:", force);
                 <li><strong>eps</strong> - Machine epsilon (the smallest representable difference).</li>
             </ul>
 
-            <h4>Usage Example</h4>
+            <h4>Available Functions</h4>
+            <ul>
+                <li><strong>sin</strong> - Calculates the sine of a value.</li>
+                <li><strong>cos</strong> - Calculates the cosine of a value.</li>
+                <li><strong>tan</strong> - Calculates the tangent of a value.</li>
+                <li><strong>log</strong> - Calculates the natural logarithm of a value.</li>
+                <li><strong>sqrt</strong> - Calculates the square root of a value.</li>
+                <li><strong>apply</strong> - Applies a function to each element of a set and returns a new set with the results.</li>
+            </ul>
+
+            <h4>Function: apply</h4>
             <p>
-                Below is an example of how to use the constants from the System module in your Pithon script:
+                The <code>apply</code> function takes a function and a set as arguments, applies the function to each element of the set, and returns a new set containing the transformed elements.
+            </p>
+
+            <h5>Syntax</h5>
+            <pre><code class="python">
+apply(function, set);
+            </code></pre>
+
+            <h5>Parameters</h5>
+            <ul>
+                <li><strong>function</strong> - A user-defined function that takes a single argument and returns a value.</li>
+                <li><strong>set</strong> - A set of elements to which the function will be applied.</li>
+            </ul>
+
+            <h5>Returns</h5>
+            <p>
+                A new set containing the results of applying the function to each element of the input set.
+            </p>
+
+            <h5>Usage Example</h5>
+            <p>
+                Below is an example of how to define a function and use the <code>apply</code> function to transform a set:
             </p>
             <pre><code class="python">
-# Example: Using System Module Constants in Pithon
+# Example: Using apply Function in Pithon
 
-# Accessing System constants
-let positive_infinity = System.inf;
-let negative_infinity = System.-inf;
-let epsilon = System.eps;
+# Define a set
+let x = {1, 2, 3};
 
-# Performing comparisons
-if (value == positive_infinity){
-    display("Value is positive infinity.");
-}
-else if (value == negative_infinity){
-    display("Value is negative infinity.");
-}
+# Define a function that squares its input
+let f(x) = x ^ 2;
 
-# Checking precision
-let is_precise = (difference < epsilon);
-display("Is the difference within machine epsilon?", is_precise);
+# Apply the function to each element of the set
+let y = apply(f, x);
+
+# y now holds {1, 4, 9}
+display(y);
             </code></pre>
+
+            <h5>Explanation</h5>
+            <ol>
+                <li><strong>Define a Set:</strong>
+                    <p>Creates a set <code>x</code> containing the elements {1, 2, 3}.</p>
+                </li>
+                <li><strong>Define a Function:</strong>
+                    <p>Defines a function <code>f</code> that takes an argument <code>x</code> and returns its square.</p>
+                </li>
+                <li><strong>Apply the Function:</strong>
+                    <p>Uses the <code>apply</code> function to apply <code>f</code> to each element of <code>x</code>, resulting in a new set <code>y</code> with values {1, 4, 9}.</p>
+                </li>
+                <li><strong>Display the Result:</strong>
+                    <p>Outputs the transformed set <code>y</code>.</p>
+                </li>
+            </ol>
         </section>
     </main>
 
