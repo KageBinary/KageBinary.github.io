@@ -29,20 +29,16 @@
         <section class="documentation-overview">
             <h2>Built-in Functions</h2>
             <p>
-                Pithon provides a rich set of built-in functions that facilitate various operations, from basic input/output to complex mathematical computations. This section lists all the built-in functions available in Pithon, along with their descriptions and usage examples.
+                Pithon provides a set of built-in functions that facilitate various operations, from functional programming utilities to mathematical computations. These functions are readily available for use in your Pithon scripts without the need for additional imports.
             </p>
         </section>
 
         <section class="built-in-functions-list">
             <h3>List of Built-in Functions</h3>
             <ul>
-                <li><strong>display()</strong> - Outputs text or variables to the console.</li>
-                <li><strong>input()</strong> - Takes user input from the console.</li>
-                <li><strong>len()</strong> - Returns the length of a string or list.</li>
-                <li><strong>range()</strong> - Generates a sequence of numbers.</li>
-                <li><strong>math.sqrt()</strong> - Calculates the square root of a number.</li>
-                <li><strong>physics.calculate_force()</strong> - Computes force based on mass and acceleration.</li>
-                <li><strong>system.get_current_directory()</strong> - Retrieves the current working directory.</li>
+                <li><strong>apply(function, set)</strong> - Applies a user-defined function to each element of a set and returns a new set with the results.</li>
+                <li><strong>summation(varName, start, end, expression)</strong> - Calculates the summation of an expression over a range of integer values.</li>
+                <li><strong>factorial(number)</strong> - Computes the factorial of a non-negative integer.</li>
                 <!-- Add more built-in functions as needed -->
             </ul>
         </section>
@@ -50,83 +46,68 @@
         <section class="function-examples">
             <h3>Function Usage Examples</h3>
 
-            <h4>display()</h4>
+            <h4>apply()</h4>
             <p>
-                Outputs text or variables to the console.
+                The <code>apply</code> function takes a user-defined function and a set as arguments, applies the function to each element of the set, and returns a new set containing the transformed elements.
             </p>
             <pre><code class="python">
-# Example of display function
-let message = "Hello, Pithon!"
-display(message)  # Outputs: Hello, Pithon!
+# Example: Using apply Function in Pithon
+
+# Define a set
+let numbers = {1, 2, 3, 4, 5};
+
+# Define a function that squares its input
+let square(x) = x ^ 2;
+
+# Apply the function to each element of the set
+let squared_numbers = apply(square, numbers);
+
+# Display the original and squared sets
+display("Original Numbers:", numbers);         # Output: Original Numbers: {1, 2, 3, 4, 5}
+display("Squared Numbers:", squared_numbers);  # Output: Squared Numbers: {1, 4, 9, 16, 25}
             </code></pre>
 
-            <h4>input()</h4>
+            <h4>summation()</h4>
             <p>
-                Takes user input from the console.
+                The <code>summation</code> function calculates the sum of an expression over a range of integer values. It takes a variable name, start and end values for the range, and the expression to be summed.
             </p>
             <pre><code class="python">
-# Example of input function
-let name = input("Enter your name: ")
-display("Hello, " + name + "!")
-            </code></pre>
+# Example: Using summation Function in Pithon
 
-            <h4>len()</h4>
-            <p>
-                Returns the length of a string or list.
-            </p>
-            <pre><code class="python">
-# Example of len function
-let text = "Pithon"
-let text_length = len(text)
-display("Length of text:", text_length)  # Outputs: Length of text: 6
-            </code></pre>
+# Define the variable, range, and expression
+let total = summation(i, 1, 5, i * 2);
 
-            <h4>range()</h4>
-            <p>
-                Generates a sequence of numbers.
-            </p>
-            <pre><code class="python">
-# Example of range function
-for i in range(1, 5):
-    display("Number:", i)
-    # Outputs: Number: 1
-    #          Number: 2
-    #          Number: 3
-    #          Number: 4
+# Display the result
+display("Summation Result:", total);  # Output: Summation Result: 30
             </code></pre>
+            <p>
+                **Explanation:**
+                <ol>
+                    <li><strong>Variable Name:</strong> <code>i</code></li>
+                    <li><strong>Start:</strong> <code>1</code></li>
+                    <li><strong>End:</strong> <code>5</code></li>
+                    <li><strong>Expression:</strong> <code>i * 2</code></li>
+                </ol>
+                The summation calculates <code>(1*2) + (2*2) + (3*2) + (4*2) + (5*2) = 30</code>.
+            </p>
 
-            <h4>math.sqrt()</h4>
+            <h4>factorial()</h4>
             <p>
-                Calculates the square root of a number.
+                The <code>factorial</code> function computes the factorial of a non-negative integer. Factorial of a number <code>n</code> is the product of all positive integers less than or equal to <code>n</code>.
             </p>
             <pre><code class="python">
-# Example of math.sqrt function
-let number = 16
-let square_root = math.sqrt(number)
-display("Square root of", number, "is", square_root)  # Outputs: Square root of 16 is 4.0
-            </code></pre>
+# Example: Using factorial Function in Pithon
 
-            <h4>physics.calculate_force()</h4>
-            <p>
-                Computes force based on mass and acceleration.
-            </p>
-            <pre><code class="python">
-# Example of physics.calculate_force function
-let mass = 10  # in kilograms
-let acceleration = 9.8  # in meters per second squared
-let force = physics.calculate_force(mass, acceleration)
-display("Force:", force)  # Outputs: Force: 98.0
-            </code></pre>
+# Calculate factorial of 5
+let fact = factorial(5);
 
-            <h4>system.get_current_directory()</h4>
-            <p>
-                Retrieves the current working directory.
-            </p>
-            <pre><code class="python">
-# Example of system.get_current_directory function
-let current_dir = system.get_current_directory()
-display("Current Directory:", current_dir)
+# Display the result
+display("Factorial of 5:", fact);  # Output: Factorial of 5: 120
             </code></pre>
+            <p>
+                **Explanation:**
+                <code>factorial(5)</code> computes <code>5 * 4 * 3 * 2 * 1 = 120</code>.
+            </p>
         </section>
     </main>
 
